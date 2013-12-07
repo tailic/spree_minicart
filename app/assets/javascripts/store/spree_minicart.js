@@ -3,17 +3,8 @@
 
 (function($){
   $(document).ready(function(){
-    var config = {
-      over: function(){
-        $("#minicart").slideDown();
-      },
-      timeout: 250, // number = milliseconds delay before onMouseOut
-      out: function(){
-        $("#minicart").slideUp();
-      }
-    };
-
-    $("#link-to-cart").hoverIntent( config )
+   
+    //$("#link-to-cart").hoverIntent( config )
 
     // hoverintent items created by js http://rndnext.blogspot.com/2009/02/jquery-live-and-plugins.html
     $(document).on('mouseover', "ul#minicart-items li", function(e)
@@ -53,3 +44,18 @@
     })
   });
 })(jQuery);
+
+
+$(document).on('mouseover', "#cart-link", function(e)
+    {
+$("#minicart").slideDown();
+
+    });
+$(document).on('click', "#mini-cart-close", function(e)
+    {
+$("#minicart").slideUp();
+
+    });
+$(document).on('click', "body", function(e){
+   $("#minicart").slideUp();
+});
