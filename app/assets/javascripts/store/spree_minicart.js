@@ -46,16 +46,25 @@
 })(jQuery);
 
 
-$(document).on('mouseover', "#cart-link", function(e)
+$(document).on('mouseover', "#link-to-cart", function(e)
     {
-$("#minicart").slideDown();
+
+    $("#minicart").slideDown();
 
     });
-$(document).on('click', "#mini-cart-close", function(e)
+$(document).on('mouseleave', "#link-to-cart", function(e)
     {
+
+    $("#minicart").slideUp();
+
+    });
+$(document).on('mouseleave', "#minicart", function(e)
+    {
+      console.log("minicart-box");
 $("#minicart").slideUp();
 
     });
+
 $(document).on('click', "body", function(e){
    $("#minicart").slideUp();
 });
