@@ -46,7 +46,7 @@
 })(jQuery);
 
 
-$(document).on('mouseover', "#link-to-cart", function(e)
+$(document).on('mouseenter', "#link-to-cart", function(e)
     {
 
     $("#minicart").slideDown();
@@ -55,12 +55,17 @@ $(document).on('mouseover', "#link-to-cart", function(e)
 $(document).on('mouseleave', "#link-to-cart", function(e)
     {
 
-    $("#minicart").slideUp();
+    $("#minicart").filter(":not(:animated)").slideUp();
+
+    });
+$(document).on('mouseenter', "#minicart", function(e)
+    {
+      
+$("#minicart").show();
 
     });
 $(document).on('mouseleave', "#minicart", function(e)
     {
-      console.log("minicart-box");
 $("#minicart").slideUp();
 
     });
