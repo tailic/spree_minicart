@@ -1,5 +1,8 @@
 //= require store/jquery.hoverintent
 
+window.miniCart = window.miniCart || {};
+
+
 (function ($) {
     'use strict';
     $(document).ready(function () {
@@ -19,16 +22,9 @@
                 timeout: 250, // number = milliseconds delay before onMouseOut
                 out: function () {
                     $(config.selectors.miniCart).hide();
-                }
+                },
+                selector: "#minicart"
             }
-        }
-
-        var showMiniCart = function () {
-            $(config.selectors.miniCart).show();
-        };
-
-        var hideMiniCart = function () {
-            $(config.selectors.miniCart).hide();
         };
 
 
@@ -43,25 +39,13 @@
 
         //TODO make ajax progress indication more user friendly
         //TODO #update-minicart to scope the form selector? there can be more remote forms on page!?
-        $(document).on("ajax:beforeSend", "form[data-remote]", function () {
-            $(config.progress).show();
-        });
+//        $(document).on("ajax:beforeSend", "form[data-remote]", function () {
+//            $(config.progress).show();
+//        });
+//
+//        $(document).on("ajax:complete", "form[data-remote]", function () {
+//            $(config.progress).hide();
+//        });
 
-        $(document).on("ajax:complete", "form[data-remote]", function () {
-            $(config.progress).hide();
-        });
-
-        $(document).on('mouseenter', config.selectors.miniCart, function () {
-            showMiniCart();
-        });
-
-        $(document).on('mouseleave', config.selectors.miniCart, function () {
-            hideMiniCart();
-        });
-
-        //TODO this will fire on all clicks... bind only if minicart is open and unbind after
-        $(document).on('click', "body", function () {
-            hideMiniCart();
-        });
     });
 })(jQuery);

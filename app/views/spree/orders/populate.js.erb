@@ -1,15 +1,15 @@
 <% current_order and current_order.update! # update to get correct total %>
 // Refresh minicart count
-$("#link-to-cart a").replaceWith('<%= escape_javascript link_to_cart %>')
+$("#link-to-cart a").replaceWith('<%= escape_javascript link_to_cart %>');
 
 // Refresh minicart line items
-$("#minicart").replaceWith('<%= escape_javascript render("spree/shared/minicart") %>')
+$("#minicart").replaceWith('<%= escape_javascript render("spree/shared/minicart") %>');
 
 // Sliding down minicart
-$("#link-to-cart #minicart").slideDown()
+$("#link-to-cart #minicart").slideDown();
 
 // Sliding up minicart
 setTimeout(function () {
-  $("#link-to-cart #minicart").slideUp()
+  $("#link-to-cart #minicart").slideUp();
 },
 5000);

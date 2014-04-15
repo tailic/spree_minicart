@@ -2,6 +2,6 @@
 $("#link-to-cart a").replaceWith('<%= escape_javascript link_to_cart %>')
 
 // Refresh minicart line items
-$("#minicart").replaceWith('<%= escape_javascript render("spree/shared/minicart") %>')
+$("#minicart").replaceWith('<%= escape_javascript render("spree/shared/minicart") %>');
 
 $("#progress").slideUp();
