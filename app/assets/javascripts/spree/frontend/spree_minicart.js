@@ -1,4 +1,4 @@
-//= require store/jquery.hoverintent
+//= require spree/frontend/jquery.hoverintent
 
 window.miniCart = window.miniCart || {};
 
