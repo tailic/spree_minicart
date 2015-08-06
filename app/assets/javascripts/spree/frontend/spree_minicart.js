@@ -2,7 +2,6 @@
 
 window.miniCart = window.miniCart || {};
 
-
 (function ($) {
     'use strict';
     $(document).ready(function () {
